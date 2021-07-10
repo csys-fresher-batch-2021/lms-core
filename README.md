@@ -1,10 +1,10 @@
-# Project Title : Leave Management System  
+# Project Title : Leave Management System Project
 
 
 ### Module -2 (Leaves)
 
 
-#### Employee Leave overall Details table
+#### Employee Leave Overall Details Table
 ```sql
 CREATE TABLE XX_EMP_LEAVE_DET (EMPLOYEE_ID VARCHAR2(150) NOT NULL,EMPLOYEE_NAME VARCHAR2(150),DEPARTMENT_NAME VARCHAR2(150),
                                LEAVE_NAME VARCHAR2(150),LEAVE_CODE VARCHAR2(150) NOT NULL, LEAVE_START_DATE DATE,
