@@ -1,7 +1,7 @@
 # Project Title : Leave Management System Project
 
 
-### Module -2 (Leaves)
+### Module-2 (Leaves)
 
 
 #### Employee Leave Overall Details Table
