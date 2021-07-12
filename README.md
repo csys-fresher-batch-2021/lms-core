@@ -347,7 +347,7 @@ CREATE TABLE XX_EMP_LOGIN_DET
 Insert into XX_ADMIN_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1012','Employee','GANESH','Emp123');
 Insert into XX_EMP_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1005','Employee','KARTHI','Sys@123');
 ```
-```
+```sql
 select username,password from XX_EMP_LOGIN_DET
 where username = 'Employee' and password = 'Emp123';
 
@@ -392,7 +392,7 @@ end if;
 COMMIT;  
 END;
 ```
-```
+```sql
 exec XX_ADMIN_INSERT_EMP_PROC ('E1003','HEMA','Employee','Welcome@123');
 ```
 #####  .Remove on employee (Admin) query Using Procedure feature-4
@@ -416,7 +416,7 @@ end if;
 COMMIT;  
 END;
 ```
-```
+```sql
 eexec XX_ADMIN_REMOVE_EMP_PROC ('E1003');
 ```
 
