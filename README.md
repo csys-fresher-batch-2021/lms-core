@@ -359,7 +359,7 @@ where username = 'Admin' and password = 'User@123';
 
 ```sql
 select EMP.EMPLOYEE_CODE,EMP.EMPLOYEE_NAME,EMP.date_of_birth,EMP.hire_date,
-       decode(EMP.sex,'M','Male','F','Female',EMP.sex) Gender,EMP.department,EMP.position,
+       decode(EMP.Gender,'M','Male','F','Female',EMP.Gender) Gender,EMP.department,EMP.position,
        EMP.place,EMP.employee_type,EMP.manager_code,MGR.EMPLOYEE_NAME Manager_name
 from XX_EMPLOYEES_DET EMP,
      XX_EMPLOYEES_DET MGR
@@ -417,7 +417,7 @@ COMMIT;
 END;
 ```
 ```sql
-eexec XX_ADMIN_REMOVE_EMP_PROC ('E1003');
+exec XX_ADMIN_REMOVE_EMP_PROC ('E1003');
 ```
 
 #### .Update Employee Details query feature-5
@@ -428,7 +428,7 @@ set EMP.EMPLOYEE_CODE = 'E1020',
     EMP.EMPLOYEE_NAME = 'Raj',
     EMP.date_of_birth = '01-08-1990',
     EMP.hire_date = '07-04-2021',
-    EMP.sex = 'M',
+    EMP.Gender = 'M',
     EMP.department = 'Oracle',
     EMP.position = 'Oracle Apps',
     EMP.place = 'Chennai',
