@@ -344,6 +344,12 @@ Insert into XX_ADMIN_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1
 select *
 from XX_ADMIN_LOGIN_DET
 ```
+User Id | User Type | Username | Password |
+ |:------- |:----------|:-------|:------------------|
+ | E1011 | ADMIN | ARUN | Welcome@123 |
+ | E1013 | ADMIN | NARESH | System@123 |
+ | E1010 | ADMIN | SUDHARSAN | User@123 |
+
 ```sql
 CREATE TABLE XX_EMP_LOGIN_DET 
            ( USER_ID VARCHAR2(150), 
@@ -354,9 +360,19 @@ CREATE TABLE XX_EMP_LOGIN_DET
 ```
 
 ```sql
-Insert into XX_ADMIN_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1012','Employee','GANESH','Emp123');
+Insert into XX_EMP_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1012','Employee','GANESH','Emp123');
 Insert into XX_EMP_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1005','Employee','KARTHI','Sys@123');
 ```
+
+```
+select *
+from XX_EMP_LOGIN_DET
+```
+User Id | User Type | Username | Password |
+ |:------- |:----------|:-------|:------------------|
+ | E1012 | EMPLOYEE | GANESH | Emp@123 |
+ | E1005 | EMPLOYEE | KARTHI | Sys@123 |
+
 ```sql
 select username,password from XX_EMP_LOGIN_DET
 where username = 'Employee' and password = 'Emp123';
