@@ -40,6 +40,20 @@ Insert into XX_EMPLOYEES_DET (EMPLOYEE_CODE,EMPLOYEE_NAME,DATE_OF_BIRTH,GENDER,D
 select *
 from XX_EMPLOYEES_DET
 ```
+ Employee Code | Employee Name | Date of Birth | Gender | Department | Position | Hire Date | Place | Manager Code | Employee Type |
+ |:------- |:----------|:-------|:------------------|:--------------------|:-------------|:----------------|:---------------------------|:----------------|:---------------------------|
+| E1001 | ARUN | 18-12-1997 | M | ORACLE | CONSULTANT | 23-02-2015 | CHENNAI | E1005 | EMPLOYEE | 
+| E1002 | DEEPA | 06-08-1998 | F | ORACLE-APPS | TRAINEE | 24-02-2015 | CHENNAI | E1005 | EMPLOYEE | 
+| E1003 | ELUMALAI | 13-09-1999 | M | HUMAN RESOURCES | HR | 25-02-2015 | TRICHY | E1010 | EMPLOYEE | 
+| E1004 | HEMA| | 21-10-1997| F | FUSION| PROGRAMMER | 26-02-2015 | SALEM | E1005 | EMPLOYEE | 
+| E1005 | KARTHI | 19-07-1998| M | FUSION| MANAGER | 27-02-2015 | MADURAI | E1010 | EMPLOYEE | 
+| E1006 | MUTHUKUMAR| 26-09-1999| M | ORACLE| CONSULTANT | 28-02-2015 | DELHI | E1005 | EMPLOYEE | 
+| E1007 | PARTHIBAN | 09-12-1996| M | FUSION| PROGRAMMER | 01-03-2015 | DELHI | E1005 | EMPLOYEE | 
+| E1008 | REKA | 28-06-1999| F | HUMAN RESOURCES | HR | 02-03-2015 | TRICHY | E1010 | EMPLOYEE | 
+| E1009 | SAKIL | 09-09-1999| M | HUMAN RESOURCES | TRAINEE | 03-03-2015 | MADURAI | E1010 | EMPLOYEE | 
+| E1010 | SUDHARSAN | 10-12-1996| M | HUMAN RESOURCES | MANAGER | 04-03-2015 | KOVAI | E1011 | EMPLOYEE | 
+
+
 #### .Employee Leave Details Table
 ```sql
 CREATE TABLE XX_EMPLOYEES_LEAVE_DET 
