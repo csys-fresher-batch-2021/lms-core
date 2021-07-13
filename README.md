@@ -72,7 +72,7 @@ Insert into XX_EMPLOYEES_LEAVE_DET  (LEAVE_ID,EMPLOYEE_CODE,MANAGER_CODE,LEAVE_T
 select *
 from XX_EMPLOYEES_LEAVE_DET
 ```
- Leave Id | Employee Code | Manager Code | Leave type | Leave Reason | Leave Start Date | Leave End Date | Leave Reason | Leave Start Date | Leave Start Date | Status |
+ Leave Id | Employee Code | Manager Code | Leave type | Leave Reason | Leave Start Date | Leave End Date | Status |
  |:------- |:----------|:-------|:------------------|:--------------------|:-------------|:----------------|:---------------------------|:---------------|:------------------|
  | 100 | E1001 | E1005 | CASUAL_LEAVE | FUNCTION | 07-01-2021 | 08-01-2021 | APPLIED |
  | 101 | E1002 | E1006 | CASUAL_LEAVE | FUNCTION | 07-02-2021 | 08-02-2021 | APPLIED |
