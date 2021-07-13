@@ -166,7 +166,7 @@ CREATE TABLE XX_EMPLOYEES_LEAVE_CANCEL_DET
 ```
 ##### .Insert Employee Leave Cancel 
 ```sql
-Insert into XX_EMPLOYEES_LEAVE_CANCEL_DET (LEAVE_ID,LEAVE_CANCEL,STATUS,REQUEST_FROM,CANCE_BY,CANCELED_DATE) values (101,'CL','CANCELED','E1001','E1003','07-02-2021');
+Insert into XX_EMPLOYEES_LEAVE_CANCEL_DET (LEAVE_ID,LEAVE_CANCEL,STATUS,REQUEST_FROM,CANCE_BY,CANCELLED_DATE) values (101,'CL','CANCELLED','E1001','E1003','07-02-2021');
 
 ```
 ##### .Select All Data
@@ -174,6 +174,10 @@ Insert into XX_EMPLOYEES_LEAVE_CANCEL_DET (LEAVE_ID,LEAVE_CANCEL,STATUS,REQUEST_
 select *
 from XX_EMPLOYEES_LEAVE_CANCEL_DET
 ```
+Leave Id | Leave Cancel | Status | Request From | Cancel By | Cancelled Date |
+ |:------- |:----------|:-------|:------------------|:--------------------|:-------------|
+ | 101 | CL | CANCELLED | E1001 | E1003 | 07-01-2021 |
+
 #### .Employee Manager Details Table
 ```sql
 CREATE TABLE XX_EMPLOYEES_MANAGER_DET 
