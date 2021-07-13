@@ -296,7 +296,7 @@ end;
 ```
 #### .Execution Procedure
 ```sql
-exec XX_LMS_LEAVE_STATUS_PROC ('E1002','CL','R',102);
+exec LMS_LEAVE_STATUS_PROC ('E1002','CL','R',102);
 ```
 #### .Check data
 ```sql
