@@ -223,8 +223,9 @@ where EMPLOYEE_CODE = 'E1001'
 and Leave_id = 100;
 ```
 ##### .Reject and Approve leave using Procedure - feature-4
-
+```sql
 set serveroutput on;
+
 create or replace procedure LMS_EMP_LEAVE_STATUS_PROC (P_req_id varchar2,P_leave_code varchar2,P_Status_code varchar2,P_Leave_id number)
 as
 
