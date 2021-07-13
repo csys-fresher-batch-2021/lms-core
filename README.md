@@ -120,8 +120,8 @@ from XX_EMPLOYEE_LEAVE_REQ_PEND_DET
 ```
 Leave Id | Leave Request Pending | Status | Request From | Request To | Request Date |
  |:------- |:----------|:-------|:------------------|:--------------------|:-------------|
- | 101 | CL | Pending | E1001 | E1003 | 07-01-2021 |
- | 102 | CL | Pending | E1001 | E1003 | 07-02-2021 | 
+ | 101 | CL | PENDING | E1001 | E1003 | 07-01-2021 |
+ | 102 | CL | PENDING | E1001 | E1003 | 07-02-2021 | 
 
 #### .Employee Leave Approve/Reject Table
 ```sql
