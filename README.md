@@ -146,6 +146,10 @@ Insert into XX_EMPLOYEES_LEAVE_APPROVE_DET (LEAVE_ID,LEAVE_APPROVE,STATUS,REQUES
 select *
 from XX_EMPLOYEES_LEAVE_APPROVE_DET
 ```
+Leave Id | Leave Approve | Status | Request From | Approved By | Approved Date |
+ |:------- |:----------|:-------|:------------------|:--------------------|:-------------|
+ | 101 | CL | APPROVED | E1001 | E1003 | 07-01-2021 |
+
 #### .Employee Leave Cancel Table
 ```sql
 CREATE TABLE XX_EMPLOYEES_LEAVE_CANCEL_DET 
