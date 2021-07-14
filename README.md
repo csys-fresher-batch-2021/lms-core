@@ -1,4 +1,4 @@
-# Project Title : Leave Management System Project
+# Project Title : Leave Management System
 
 
 ### Module-1 (Leaves)
