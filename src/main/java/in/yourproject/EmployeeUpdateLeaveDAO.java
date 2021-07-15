@@ -31,7 +31,7 @@ public class EmployeeUpdateLeaveDAO {
 		System.out.println(connection);
 
 		// String name = ;
-		int leaveId = 100;
+		int leaveId = 101;
 		String Status = "Approved";
 		String userName = "Manager";
 		

@@ -63,7 +63,7 @@ public class UserUpdateEmployeeValidatorTest {
 					userupdatuseridvalidate("E101");
 					userupdatusertypevalidate("Emp");
 					userupdatusername("AA");
-					userupdatepassword ("AA");
+					userupdatepassword (" ");
 					System.out.println("Invalid leave");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block

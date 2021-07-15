@@ -31,15 +31,17 @@ public class EmployeeUpdateDAO {
 
 		// String name = ;
 		String userName = "REKA";
-		String userId = "E1012";
+		String password1 = "Welcome@123";
+		String userId = "E1005";
 		
 		
-			String sql = "Update LMS_EMP_LOGIN_DET set USERNAME = ? where USER_ID = ?";
+			String sql = "Update LMS_EMP_LOGIN_DET set USERNAME = ?, PASSWORD = ? where USER_ID = ?";
 			System.out.println(sql);
 
 			PreparedStatement pst = connection.prepareStatement(sql);
 			pst.setString(1, userName);
-			pst.setString(2, userId);
+			pst.setString(2, password1);
+			pst.setString(3, userId);
 			int rows = pst.executeUpdate();
 			pst.close();
 
