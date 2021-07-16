@@ -2,7 +2,6 @@ package in.lmscore.dao;
 
 import java.sql.Connection;
 import in.lmscore.util.Logger;
-
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
