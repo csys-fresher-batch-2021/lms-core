@@ -1,11 +1,11 @@
-package in.yourproject;
+package in.lmscore.validator;
 
 public class UserLoginValidator {
 
 	public static void validate(String userName, String passWord) throws Exception {
 
 		if (userName == null || passWord == null) {
-			throw new Exception("Invalid username / password");
+			throw new Exception("Invalid userName / passWord");
 		}
 
 		// End Validation
@@ -19,11 +19,11 @@ public class UserLoginValidator {
 	public static void main(String[] args) {
 		// employee id
 
-		String Username = null;
-		String Password = "678";
+		String userName = "Reka";
+		String passWord = "123678";
 
 		try {
-			validate(Username, Password);
+			validate(userName, passWord);
 			System.out.println("Validation completed");
 		} catch (Exception e) {
 			// System.out.println("Catch");

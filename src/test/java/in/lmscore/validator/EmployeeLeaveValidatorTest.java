@@ -1,4 +1,4 @@
-package in.yourproject;
+package in.lmscore.validator;
 
 public class EmployeeLeaveValidatorTest {
 
@@ -14,7 +14,5 @@ public class EmployeeLeaveValidatorTest {
 			e.printStackTrace();
 			System.out.println("Data: " + e.getMessage());
 		}
-		}
 	}
-
-
+}
