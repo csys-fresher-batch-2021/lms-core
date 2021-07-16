@@ -2,6 +2,8 @@ package in.lmscore.model;
 
 import java.time.LocalDate;
 
+import in.lmscore.util.Logger;
+
 public class Employee {
 
 	// don't touch the command line
@@ -26,20 +28,20 @@ public class Employee {
 
 	public void display(String empCode, String empName, LocalDate dob, String gender, String dept, String postn,
 			LocalDate hireDate, String place, String mgrCode, String empType) {
-		System.out.println("EmpCode : " + empCode);
-		System.out.println("EmpName : " + empName);
-		System.out.println("DOB : " + dob);
-		System.out.println("Gender : " + gender);
-		System.out.println("Dept : " + dept);
-		System.out.println("Postn : " + postn);
-		System.out.println("HireDate : " + hireDate);
-		System.out.println("Place : " + place);
-		System.out.println("MgrCode : " + mgrCode);
-		System.out.println("EmpType : " + empType);
+		Logger.debug("EmpCode : " + empCode);
+		Logger.debug("EmpName : " + empName);
+		Logger.debug("DOB : " + dob);
+		Logger.debug("Gender : " + gender);
+		Logger.debug("Dept : " + dept);
+		Logger.debug("Postn : " + postn);
+		Logger.debug("HireDate : " + hireDate);
+		Logger.debug("Place : " + place);
+		Logger.debug("MgrCode : " + mgrCode);
+		Logger.debug("EmpType : " + empType);
 	}
 
 	public Employee() {
-		System.out.println("Constructor created for employee");
+		Logger.info("Constructor created for employee");
 
 	}
 

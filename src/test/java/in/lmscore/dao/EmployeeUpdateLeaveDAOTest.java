@@ -1,4 +1,5 @@
 package in.lmscore.dao;
+import in.lmscore.util.Logger;
 
 public class EmployeeUpdateLeaveDAOTest {
 	
@@ -6,9 +7,9 @@ public class EmployeeUpdateLeaveDAOTest {
 	public static void Update (String empcode, String status,int  leaveId) {
 		
 		String sql = "UPADTE LMS_EMPLOYEES_LEAVE_DET SET EMPLOYEE_CODE = '" + empcode + "', STATUS = '" + status + "' WHERE LEAVE_ID = " + leaveId + ";";
-		System.out.println(sql);
+		Logger.debug(sql);
 		
-		System.out.println("Updated this employee Code " + empcode );
+		Logger.debug("Updated this employee Code " + empcode );
 		
 	}
 	public static  boolean checkAdminPermission(String empcode, String status,int leaveId, String empType) throws Exception {
@@ -31,7 +32,7 @@ public class EmployeeUpdateLeaveDAOTest {
 			Update("E1005","APPROVED",101);
 		
 		} catch (Exception e) {
-			System.out.println("Error:"+ e.getMessage());
+			Logger.debug("Error:"+ e.getMessage());
 			e.printStackTrace();
 		}
 				

@@ -1,5 +1,6 @@
 package in.lmscore.dao;
 import java.sql.Connection;
+import in.lmscore.util.Logger;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,7 +28,7 @@ public class EmployeeUpdateDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		System.out.println(connection);
+		Logger.debug(connection);
 
 		// String name = ;
 		String userName = "REKA";
@@ -36,7 +37,7 @@ public class EmployeeUpdateDAO {
 		
 		
 			String sql = "Update LMS_EMP_LOGIN_DET set USERNAME = ?, PASSWORD = ? where USER_ID = ?";
-			System.out.println(sql);
+			Logger.debug(sql);
 
 			PreparedStatement pst = connection.prepareStatement(sql);
 			pst.setString(1, userName);
@@ -47,7 +48,7 @@ public class EmployeeUpdateDAO {
 
 			connection.close();
 
-			System.out.println("No of rows Updated :" + rows);
+			Logger.debug("No of rows Updated :" + rows);
 	
 		}
 		// String sql = "insert into test_students(name) values ('" + name + "')";

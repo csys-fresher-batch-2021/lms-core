@@ -1,6 +1,7 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
+import in.lmscore.util.Logger;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,13 +28,13 @@ public class EmployeeLeaveBalanceDAOTest {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		System.out.println(connection);
+		Logger.debug(connection);
 
 		String empCode = "E1008";
 
 		String sql = "select EMPLOYEE_CODE, LEAVE_BALANCE from LMS_EMPLOYEES_LEAVE_DET WHERE EMPLOYEE_CODE = ?";
 
-		System.out.println(sql);
+		Logger.debug(sql);
 
 		PreparedStatement pst = connection.prepareStatement(sql);
 

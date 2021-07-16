@@ -1,5 +1,5 @@
 package in.lmscore.model;
-
+import in.lmscore.util.Logger;
 public class StringUtilTest {
 	//If any Changes in this Code inform to me
 			/*code developed by Karthi L 14-07-2021
@@ -18,17 +18,17 @@ public class StringUtilTest {
 		String userType = "Employee";
 		String userName = "Arun";
 		String password = "Welcome@123";
-		System.out.println("UserId:" + StringUtilTest.isValidString(userID));
-		System.out.println("UserType:" + StringUtilTest.isValidString(userType));
-		System.out.println("UserName:" + StringUtilTest.isValidString(userName));
-		System.out.println("Password:" + StringUtilTest.isValidString(password));
+		Logger.debug("UserId:" + StringUtilTest.isValidString(userID));
+		Logger.debug("UserType:" + StringUtilTest.isValidString(userType));
+		Logger.debug("UserName:" + StringUtilTest.isValidString(userName));
+		Logger.debug("Password:" + StringUtilTest.isValidString(password));
 		
 		// Task 1: If firstName and lastName is valid, then we will store user details in "users" table.
 		if(StringUtilTest.isValidString(userID) && StringUtilTest.isValidString(userType) && StringUtilTest.isValidString(userName) && StringUtilTest.isValidString(password)) {
-			System.out.println("Success");
+			Logger.debug("Success");
 		}
 		else {
-			System.out.println("Data is invalid");
+			Logger.debug("Data is invalid");
 		}
 	}
 

@@ -1,4 +1,5 @@
 package in.lmscore.validator;
+import in.lmscore.util.Logger;
 
 public class UserLoginValidator {
 
@@ -12,7 +13,7 @@ public class UserLoginValidator {
 
 		// StudentDAO.save(name);
 		// UserLogin e = new UserLogin(" ","25678");
-		// System.out.println(" Login Successfully");
+		// Logger.debug(" Login Successfully");
 
 	}
 
@@ -24,11 +25,11 @@ public class UserLoginValidator {
 
 		try {
 			validate(userName, passWord);
-			System.out.println("Validation completed");
+			Logger.debug("Validation completed");
 		} catch (Exception e) {
-			// System.out.println("Catch");
+			// Logger.debug("Catch");
 			String errorMessage = e.getMessage();
-			System.out.println("errorMessage:" + errorMessage);
+			Logger.debug("errorMessage:" + errorMessage);
 			// e.printStackTrace();
 		}
 	}

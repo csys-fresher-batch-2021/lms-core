@@ -52,7 +52,7 @@ public class UserDeleteService {
 				UserDeleteDAO.delete(empId);
 			}
 			else {
-				System.out.println("You Cannot have a permission to delete");
+				Logger.debug("You Cannot have a permission to delete");
 			}*/
 
 		} catch (Exception e) {

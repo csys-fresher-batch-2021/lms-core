@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
-
+import in.lmscore.util.Logger;
 public class UserDeleteDAO {
 	// If any Changes in this Code inform to me
 	/*
@@ -32,7 +32,7 @@ public class UserDeleteDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		System.out.println(connection);
+		Logger.debug(connection);
 
 		// String name = ;
 		String userId = "E1012";
@@ -40,7 +40,7 @@ public class UserDeleteDAO {
 
 		if (userName.equals("Admin")) {
 			String sql = "DELETE FROM LMS_EMP_LOGIN_DET WHERE USER_ID = ?";
-			System.out.println(sql);
+			Logger.debug(sql);
 
 			PreparedStatement pst = connection.prepareStatement(sql);
 			pst.setString(1, userId);
@@ -50,9 +50,9 @@ public class UserDeleteDAO {
 
 			connection.close();
 
-			System.out.println("No of rows Updated :" + rows);
+			Logger.debug("No of rows Updated :" + rows);
 		} else {
-			System.out.println("You Cannot have a permission to delete.");
+			Logger.debug("You Cannot have a permission to delete.");
 
 		}
 		// String sql = "insert into test_students(name) values ('" + name + "')";

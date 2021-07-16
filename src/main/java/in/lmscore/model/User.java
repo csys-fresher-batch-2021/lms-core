@@ -1,4 +1,5 @@
 package in.lmscore.model;
+import in.lmscore.util.Logger;
 public class User {
 	//If any Changes in this Code inform to me
 		/*code developed by Karthi L 14-07-2021
@@ -10,7 +11,7 @@ public class User {
 		public String password;
 		
 		public User() {
-			System.out.println("Constructor created for User");
+			Logger.debug("Constructor created for User");
 			
 		}
 		public User(String userId,

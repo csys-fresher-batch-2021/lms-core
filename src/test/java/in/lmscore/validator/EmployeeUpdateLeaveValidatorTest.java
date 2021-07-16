@@ -1,5 +1,6 @@
 package in.lmscore.validator;
 import java.time.LocalDate;
+import in.lmscore.util.Logger;
 public class EmployeeUpdateLeaveValidatorTest {
 	/**
 	 * Developed by - Karthi
@@ -48,11 +49,11 @@ public class EmployeeUpdateLeaveValidatorTest {
 				updateempvalidate("E101");
 				updateleavevalidate("Emp");
 				leaveidvalidate(100);
-				System.out.println("Invalid leave");
+				Logger.debug("Invalid leave");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				System.out.println("Data: " + e.getMessage());
+				Logger.debug("Data: " + e.getMessage());
 			}
 			
 		}

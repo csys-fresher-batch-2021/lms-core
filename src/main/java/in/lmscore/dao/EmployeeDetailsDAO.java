@@ -1,6 +1,8 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
+import in.lmscore.util.Logger;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -24,13 +26,13 @@ public class EmployeeDetailsDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		System.out.println(connection);
+		Logger.debug(connection);
 
 		
 		String empCode = "E1003";
 
 		String sql = "select EMPLOYEE_CODE,EMPLOYEE_NAME,DATE_OF_BIRTH,GENDER,DEPARTMENT,POSITION,HIRE_DATE,PLACE,MANAGER_CODE,EMPLOYEE_TYPE from LMS_EMPLOYEES_DET WHERE EMPLOYEE_CODE = ?";
-		System.out.println(sql);
+		Logger.debug(sql);
 
 		PreparedStatement pst = connection.prepareStatement(sql);
 		pst.setString(1, empCode);

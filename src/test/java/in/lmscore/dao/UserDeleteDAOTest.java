@@ -1,13 +1,13 @@
 package in.lmscore.dao;
-
+import in.lmscore.util.Logger;
 public class UserDeleteDAOTest {
 	
 	
 	public static void delete(String empId) {
 		String sql = "delete from products where id = '" + empId + "';";
-		System.out.println(sql);
+		Logger.debug(sql);
 		
-		System.out.println("Deleted this employee Code " + empId );
+		Logger.debug("Deleted this employee Code " + empId );
 		
 	}
 	public static  boolean checkAdminPermission(String userName1) throws Exception {
@@ -27,7 +27,7 @@ public class UserDeleteDAOTest {
 			delete("E1013");
 			
 		} catch (Exception e) {
-			System.out.println("Error:"+ e.getMessage());
+			Logger.debug("Error:"+ e.getMessage());
 			e.printStackTrace();
 		}
 				

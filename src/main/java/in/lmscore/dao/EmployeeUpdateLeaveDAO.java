@@ -1,6 +1,7 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
+import in.lmscore.util.Logger;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,7 +29,7 @@ public class EmployeeUpdateLeaveDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		System.out.println(connection);
+		Logger.debug(connection);
 
 		// String name = ;
 		int leaveId = 101;
@@ -37,7 +38,7 @@ public class EmployeeUpdateLeaveDAO {
 		
 		if(userName.equals("Manager")) {
 			String sql = "Update LMS_EMPLOYEES_LEAVE_DET set Status = ? where LEAVE_ID = ?";
-			System.out.println(sql);
+			Logger.debug(sql);
 
 			PreparedStatement pst = connection.prepareStatement(sql);
 			pst.setString(1, Status);
@@ -47,10 +48,10 @@ public class EmployeeUpdateLeaveDAO {
 
 			connection.close();
 
-			System.out.println("No of rows Updated :" + rows);
+			Logger.debug("No of rows Updated :" + rows);
 		}
 		else {
-			System.out.println("You Cannot have a permission to delete.");
+			Logger.debug("You Cannot have a permission to delete.");
 			
 		}
 		// String sql = "insert into test_students(name) values ('" + name + "')";

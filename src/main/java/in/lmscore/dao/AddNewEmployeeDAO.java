@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import in.lmscore.validator.EmployeeValidator;
+import in.lmscore.util.Logger;
 
 public class AddNewEmployeeDAO {
 
@@ -25,7 +25,7 @@ public class AddNewEmployeeDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		System.out.println(connection);
+		Logger.debug(connection);
 
 		String userId = "E1021";
 		String uname = "Jagan";
@@ -33,7 +33,7 @@ public class AddNewEmployeeDAO {
 		String userType = "Employee";
 
 		String sql = "INSERT INTO LMS_EMP_LOGIN_DET (USER_ID,USER_TYPE,PASSWORD,USERNAME) VALUES(?,?,?,?)";
-		System.out.println(sql);
+		Logger.debug(sql);
 
 		PreparedStatement pst = connection.prepareStatement(sql);
 		pst.setString(1, userId);
@@ -46,7 +46,7 @@ public class AddNewEmployeeDAO {
 
 		connection.close();
 
-		System.out.println("No of rows Inserted :" + rows);
+		Logger.debug("No of rows Inserted :" + rows);
 
 	}
 

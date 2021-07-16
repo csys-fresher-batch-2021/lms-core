@@ -1,5 +1,5 @@
 package in.lmscore.model;
-
+import in.lmscore.util.Logger;
 import java.time.LocalDate;
 
 public class EmployeeLeaveTest {
@@ -14,6 +14,6 @@ public class EmployeeLeaveTest {
 
 		EmployeeLeave e1 = new EmployeeLeave();
 		e1.display(101, "E1002", "E1006", "CASUAL_LEAVE", "FUNCTION", leaveDate, leaveDate, 1, 21, 20, "APLLIED");
-		System.out.println("Employee Leave Applied Successfully");
+		Logger.debug("Employee Leave Applied Successfully");
 	}
 }

@@ -1,5 +1,5 @@
 package in.lmscore.model;
-
+import in.lmscore.util.Logger;
 public class UserLogin {
 
 	String userName;
@@ -9,7 +9,7 @@ public class UserLogin {
 	public UserLogin(String userName, String passWord) {
 		this.userName = userName;
 		this.passWord = passWord;
-		System.out.println("Login Successfully");
+		Logger.debug("Login Successfully");
 
 	}
 }
@@ -18,7 +18,7 @@ public class UserLogin {
 // method starts
 /*
  * public static void display (String userName, String passWord) {
- * System.out.println("userName : "+ userName);
- * System.out.println("passWord : "+ passWord);
- * System.out.println("Login Successfully"); } //method ends
+ * Logger.debug("userName : "+ userName);
+ * Logger.debug("passWord : "+ passWord);
+ * Logger.debug("Login Successfully"); } //method ends
  */

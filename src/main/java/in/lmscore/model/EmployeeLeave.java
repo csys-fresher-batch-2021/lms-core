@@ -1,6 +1,7 @@
 package in.lmscore.model;
 
 import java.time.LocalDate;
+import in.lmscore.util.Logger;
 
 public class EmployeeLeave {
 	static int leaveId;
@@ -24,17 +25,17 @@ public class EmployeeLeave {
 		 * this.leaveStartDate = leaveStartDate; this.leaveEndDate = leaveEndDate;
 		 * this.totalAnnualLeave = totalAnnualLeave; this.status = status;
 		 */
-		System.out.println("LeaveId : " + leaveId);
-		System.out.println("EmployeeCode : " + empCode);
-		System.out.println("ManagerCode : " + mgrCode);
-		System.out.println("LeaveType : " + leaveType);
-		System.out.println("LeaveReason : " + leaveReason);
-		System.out.println("LeaveStartDate : " + leaveStartDate);
-		System.out.println("LeaveEndDate : " + leaveEndDate);
-		System.out.println("No.of.days : " + noofdays);
-		System.out.println("TotalLeave : " + totalLeave);
-		System.out.println("LeaveBalance :" + leaveBalance);
-		System.out.println("Status : " + status);
+		Logger.debug("LeaveId : " + leaveId);
+		Logger.debug("EmployeeCode : " + empCode);
+		Logger.debug("ManagerCode : " + mgrCode);
+		Logger.debug("LeaveType : " + leaveType);
+		Logger.debug("LeaveReason : " + leaveReason);
+		Logger.debug("LeaveStartDate : " + leaveStartDate);
+		Logger.debug("LeaveEndDate : " + leaveEndDate);
+		Logger.debug("No.of.days : " + noofdays);
+		Logger.debug("TotalLeave : " + totalLeave);
+		Logger.debug("LeaveBalance :" + leaveBalance);
+		Logger.debug("Status : " + status);
 
 	}
 

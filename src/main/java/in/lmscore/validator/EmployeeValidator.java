@@ -1,4 +1,5 @@
 package in.lmscore.validator;
+import in.lmscore.util.Logger;
 
 public class EmployeeValidator {
 	// don't touch the command line
@@ -20,18 +21,18 @@ public class EmployeeValidator {
 
 	public static void emptypevalidate(String user_type) throws Exception {
 		if (user_type == "Admin") {
-			System.out.println("You can add new employee");
+			Logger.debug("You can add new employee");
 		} else {
-			System.out.println("You cannot add new employee");
+			Logger.debug("You cannot add new employee");
 		}
 	}
 
 	public static void checkempvalidate(String user_type) throws Exception {
 		if (user_type == "Employee") {
-			System.out.println("Inserted Successfully");
+			Logger.debug("Inserted Successfully");
 			// ("Inserted Successfully");
 		} else {
-			System.out.println("user_type is not valid");
+			Logger.debug("user_type is not valid");
 		}
 	}
 }

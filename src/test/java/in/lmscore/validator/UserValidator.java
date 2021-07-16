@@ -1,5 +1,5 @@
 package in.lmscore.validator;
-
+import in.lmscore.util.Logger;
 import in.lmscore.model.StringUtilTest;
 import in.lmscore.model.User;
 
@@ -30,10 +30,10 @@ public class UserValidator {
 		public static void main(String[] args) throws Exception  {
 			User user = new User("E1013","Employee","Arun","Welcome@123");
 			boolean isValid1 = validate(user); //valid = true
-			System.out.println("User Details Valid:"+ isValid1);
+			Logger.debug("User Details Valid:"+ isValid1);
 			
 			/*User user1 = new User("E1013"," ","Arun","Welcome@123");
 			boolean isValid2 = validate(user1); //valid = false
-			System.out.println("User Details Valid:"+ isValid2);*/
+			Logger.debug("User Details Valid:"+ isValid2);*/
 		}
 }

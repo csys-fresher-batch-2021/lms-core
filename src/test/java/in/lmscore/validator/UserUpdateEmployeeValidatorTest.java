@@ -1,5 +1,5 @@
 package in.lmscore.validator;
-
+import in.lmscore.util.Logger;
 public class UserUpdateEmployeeValidatorTest {
 	
 	/**
@@ -64,11 +64,11 @@ public class UserUpdateEmployeeValidatorTest {
 					userupdatusertypevalidate("Emp");
 					userupdatusername("AA");
 					userupdatepassword (" ");
-					System.out.println("Invalid leave");
+					Logger.debug("Invalid leave");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					System.out.println("Data: " + e.getMessage());
+					Logger.debug("Data: " + e.getMessage());
 				}
 				
 			}
