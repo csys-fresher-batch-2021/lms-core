@@ -1,13 +1,13 @@
-package in.yourproject;
+package in.lmscore.model;
 public class User {
 	//If any Changes in this Code inform to me
 		/*code developed by Karthi L 14-07-2021
 		 * @param employeedetails 
 		 * @return*/
-		String userId;
-		String userType;
-		String userName;
-		String password;
+		public String userId;
+		public String userType;
+		public String userName;
+		public String password;
 		
 		public User() {
 			System.out.println("Constructor created for User");

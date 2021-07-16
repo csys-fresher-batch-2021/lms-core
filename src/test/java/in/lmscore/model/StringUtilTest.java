@@ -1,4 +1,4 @@
-package in.yourproject;
+package in.lmscore.model;
 
 public class StringUtilTest {
 	//If any Changes in this Code inform to me

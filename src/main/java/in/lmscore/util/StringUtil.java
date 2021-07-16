@@ -1,4 +1,4 @@
-package in.lmscore.model;
+package in.lmscore.util;
 
 public class StringUtil {
 	public static boolean isValidString(String input) {

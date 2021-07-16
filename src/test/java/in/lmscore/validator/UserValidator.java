@@ -1,7 +1,7 @@
-package in.yourproject;
+package in.lmscore.validator;
 
-import in.yourproject.User;
-import in.yourproject.StringUtil;
+import in.lmscore.model.StringUtilTest;
+import in.lmscore.model.User;
 
 public class UserValidator {
 	

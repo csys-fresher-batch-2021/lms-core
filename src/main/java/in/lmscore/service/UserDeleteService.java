@@ -1,4 +1,4 @@
-package in.yourproject;
+package in.lmscore.service;
 
 class UserValidator1 {
 

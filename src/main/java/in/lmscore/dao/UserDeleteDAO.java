@@ -1,4 +1,4 @@
-package in.yourproject;
+package in.lmscore.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
