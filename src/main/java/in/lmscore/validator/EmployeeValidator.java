@@ -19,16 +19,16 @@ public class EmployeeValidator {
 		}
 	}
 
-	public static void emptypevalidate(String user_type) throws Exception {
-		if (user_type == "Admin") {
+	public static void emptypevalidate(String userType) {
+		if (userType == "Admin") {
 			Logger.debug("You can add new employee");
 		} else {
 			Logger.debug("You cannot add new employee");
 		}
 	}
 
-	public static void checkempvalidate(String user_type) throws Exception {
-		if (user_type == "Employee") {
+	public static void checkempvalidate(String userType)  {
+		if (userType == "Employee") {
 			Logger.debug("Inserted Successfully");
 			// ("Inserted Successfully");
 		} else {

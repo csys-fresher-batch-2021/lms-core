@@ -1,6 +1,5 @@
 package in.lmscore.validator;
-import in.lmscore.util.Logger;
-import java.time.LocalDate;
+
 
 public class EmployeeLeaveValidator {
 	public static final String Invalid = "Invalid";
@@ -31,10 +30,6 @@ public class EmployeeLeaveValidator {
 
 	}
 
-	public static boolean leavebalancecalculation(int totalLeave, int noofdays) throws Exception {
-		int leaveBalance;
-		leaveBalance = totalLeave - noofdays;
-		return true;
-	}
+
 
 }

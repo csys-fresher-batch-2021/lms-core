@@ -5,10 +5,10 @@ public class User {
 		/*code developed by Karthi L 14-07-2021
 		 * @param employeedetails 
 		 * @return*/
-		public String userId;
-		public String userType;
-		public String userName;
-		public String password;
+		static String userId;
+		static String userType;
+		static String userName;
+		static String password;
 		
 		public User() {
 			Logger.debug("Constructor created for User");

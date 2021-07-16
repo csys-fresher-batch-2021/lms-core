@@ -2,11 +2,11 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
+
 import in.lmscore.util.Logger;
 public class CancelLeaveDAO {
 	// If any Changes in this Code inform to me
@@ -36,14 +36,14 @@ public class CancelLeaveDAO {
 		Logger.debug(connection);
 
 		// String name = ;
-		String Status = "CANCELLED";
+		String status = "CANCELLED";
 		int leaveId = 121;
 
 		String sql = "UPDATE LMS_EMPLOYEES_LEAVE_DET SET STATUS= ? Where LEAVE_ID = ?";
 		Logger.debug(sql);
 
 		PreparedStatement pst = connection.prepareStatement(sql);
-		pst.setString(1, Status);
+		pst.setString(1, status);
 		pst.setInt(2, leaveId);
 		int rows = pst.executeUpdate();
 		pst.close();

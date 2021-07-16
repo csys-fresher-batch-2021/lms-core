@@ -5,7 +5,10 @@ public class StringUtil {
 		if (input == null || input.trim().equals("")) {
 			return false;
 		}
+		else
+		{
 		return true;
+		}
 	}
 
 	public static void main(String[] args) {
