@@ -1,18 +1,21 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
-import in.lmscore.util.Logger;
-import java.sql.Date;
+//import in.lmscore.util.Logger;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 public class EmployeeUpdateLeaveDAO {
-	//If any Changes in this Code inform to me
-			/*code developed by Karthi L 14-07-2021
-			 * @param employeedetails 
-			 * @return*/
+	// If any Changes in this Code inform to me
+	/*
+	 * code developed by Karthi L 14-07-2021
+	 * 
+	 * @param employeedetails
+	 * 
+	 * @return
+	 */
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 
@@ -29,43 +32,34 @@ public class EmployeeUpdateLeaveDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		Logger.debug(connection);
+		System.out.println(connection);
 
 		// String name = ;
 		int leaveId = 101;
-		String Status = "Approved";
+		String status = "Approved";
 		String userName = "Manager";
-		
-		if(userName.equals("Manager")) {
+
+		if (userName.equals("Manager")) {
 			String sql = "Update LMS_EMPLOYEES_LEAVE_DET set Status = ? where LEAVE_ID = ?";
-			Logger.debug(sql);
+			System.out.println(sql);
 
 			PreparedStatement pst = connection.prepareStatement(sql);
-			pst.setString(1, Status);
+			pst.setString(1, status);
 			pst.setInt(2, leaveId);
 			int rows = pst.executeUpdate();
 			pst.close();
 
 			connection.close();
 
-			Logger.debug("No of rows Updated :" + rows);
+			System.out.println("No of rows Updated :" + rows);
+		} else {
+			System.out.println("You Cannot have a permission to delete.");
+
 		}
-		else {
-			Logger.debug("You Cannot have a permission to delete.");
-			
-		}
-		// String sql = "insert into test_students(name) values ('" + name + "')";
-		
-		// String sql = "delete from test_students where name = ?";
-		
-		
-		
 
 		// connection.commit();
 
 		// connection.rollback();
-
-		
 
 	}
 

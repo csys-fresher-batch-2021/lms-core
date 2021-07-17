@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import in.lmscore.util.Logger;
+
 public class ListEmployeeLeavesDAO {
 
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
@@ -22,12 +23,12 @@ public class ListEmployeeLeavesDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		Logger.debug(connection);
+		System.out.println(connection);
 
 		String empCode = "E1001";
 
 		String sql = "select * from LMS_EMPLOYEES_LEAVE_DET where EMPLOYEE_CODE = ? ";
-		Logger.debug(sql);
+		System.out.println(sql);
 
 		PreparedStatement pst = connection.prepareStatement(sql);
 		pst.setString(1, empCode);

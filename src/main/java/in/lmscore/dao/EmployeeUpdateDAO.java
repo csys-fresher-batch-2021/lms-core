@@ -1,17 +1,21 @@
 package in.lmscore.dao;
+
 import java.sql.Connection;
 import in.lmscore.util.Logger;
-import java.sql.Date;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 public class EmployeeUpdateDAO {
-	//If any Changes in this Code inform to me
-			/*code developed by Karthi L 14-07-2021
-			 * @param employeedetails 
-			 * @return*/
+	// If any Changes in this Code inform to me
+	/*
+	 * code developed by Karthi L 14-07-2021
+	 * 
+	 * @param employeedetails
+	 * 
+	 * @return
+	 */
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 
@@ -28,41 +32,31 @@ public class EmployeeUpdateDAO {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		Logger.debug(connection);
+		System.out.println(connection);
 
 		// String name = ;
 		String userName = "REKA";
 		String password1 = "Welcome@123";
 		String userId = "E1005";
-		
-		
-			String sql = "Update LMS_EMP_LOGIN_DET set USERNAME = ?, PASSWORD = ? where USER_ID = ?";
-			Logger.debug(sql);
 
-			PreparedStatement pst = connection.prepareStatement(sql);
-			pst.setString(1, userName);
-			pst.setString(2, password1);
-			pst.setString(3, userId);
-			int rows = pst.executeUpdate();
-			pst.close();
+		String sql = "Update LMS_EMP_LOGIN_DET set USERNAME = ?, PASSWORD = ? where USER_ID = ?";
+		System.out.println(sql);
 
-			connection.close();
+		PreparedStatement pst = connection.prepareStatement(sql);
+		pst.setString(1, userName);
+		pst.setString(2, password1);
+		pst.setString(3, userId);
+		int rows = pst.executeUpdate();
+		pst.close();
 
-			Logger.debug("No of rows Updated :" + rows);
-	
-		}
-		// String sql = "insert into test_students(name) values ('" + name + "')";
-		
-		// String sql = "delete from test_students where name = ?";
-		
-		
-		
+		connection.close();
 
-		// connection.commit();
-
-		// connection.rollback();
-
-		
+		System.out.println("No of rows Updated :" + rows);
 
 	}
 
+	// connection.commit();
+
+	// connection.rollback();
+
+}
