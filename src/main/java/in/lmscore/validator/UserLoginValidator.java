@@ -1,5 +1,6 @@
 package in.lmscore.validator;
-import in.lmscore.util.Logger;
+
+//import in.lmscore.util.Logger;
 
 public class UserLoginValidator {
 
@@ -25,11 +26,11 @@ public class UserLoginValidator {
 
 		try {
 			validate(userName, passWord);
-			Logger.debug("Validation completed");
+			System.out.println("Validation completed");
 		} catch (Exception e) {
 			// Logger.debug("Catch");
 			String errorMessage = e.getMessage();
-			Logger.debug("errorMessage:" + errorMessage);
+			System.out.println("errorMessage:" + errorMessage);
 			// e.printStackTrace();
 		}
 	}
