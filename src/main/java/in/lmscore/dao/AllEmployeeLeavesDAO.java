@@ -42,7 +42,7 @@ public class AllEmployeeLeavesDAO {
 				String status = rs.getString(8);
 
 				GroupEmpLeaveDetails LMS_EMPLOYEES_LEAVE_DET = new GroupEmpLeaveDetails(leaveId, empCode, empType1,
-						leaveStartDate, leaveEndDate,noOfDays,leaveReason,status);
+						leaveStartDate, leaveEndDate, noOfDays, leaveReason, status);
 				LMS_EMPLOYEES_LEAVE_DETAILS.add(LMS_EMPLOYEES_LEAVE_DET);
 			}
 

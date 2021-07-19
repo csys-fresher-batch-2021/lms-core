@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import in.lmscore.model.User;
+import in.lmscore.util.ConnectionUtil;
 import in.lmscore.util.Logger;
 
 public class UserDeleteDAO {
@@ -15,49 +18,35 @@ public class UserDeleteDAO {
 	 * 
 	 * @return
 	 */
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) {
 
-		String driverClassName = System.getenv("DB_DRIVER_NAME");
-		String url = System.getenv("DB_URL");
-		String username = System.getenv("DB_USERNAME");
-		String password = System.getenv("DB_PASSWORD");
+		PreparedStatement ps = null;
+		Connection con = null;
 
-		// Step 1: Load the driver
-		Class.forName(driverClassName);
+		try {
+			con = ConnectionUtil.getConnection();
+			String userId1 = "E1021";
+			String userName = "Admin";
 
-		// Step 2: Connection
-
-		Connection connection = DriverManager.getConnection(url, username, password);
-		// connection.setAutoCommit(false);//default true
-
-		System.out.println(connection);
-
-		// String name = ;
-		String userId = "E1012";
-		String userName = "Admin";
-
-		if (userName.equals("Admin")) {
+			if (userName.equals("Admin")) {
 			String sql = "DELETE FROM LMS_EMP_LOGIN_DET WHERE USER_ID = ?";
-			System.out.println(sql);
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userId1);
 
-			PreparedStatement pst = connection.prepareStatement(sql);
-			pst.setString(1, userId);
+			int count = ps.executeUpdate();
 
-			int rows = pst.executeUpdate();
-			pst.close();
-
-			connection.close();
-
-			System.out.println("No of rows Updated :" + rows);
-		} else {
-			System.out.println("You Cannot have a permission to delete.");
-
+			if (count > 0) {
+				System.out.println(count + " row deleted");
+			} else {
+				System.out.println("You Cannot have a permission to delete.");
+				
+			}
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionUtil.close(ps, con);
 		}
-
-		// connection.commit();
-
-		// connection.rollback();
 
 	}
 
