@@ -5,10 +5,10 @@ public class User {
 		/*code developed by Karthi L 14-07-2021
 		 * @param employeedetails 
 		 * @return*/
-		static String userId;
-		static String userType;
-		static String userName;
-		static String password;
+		public static String userId;
+		public static String userType;
+		public static String userName;
+		public static String password;
 		
 		public User() {
 			Logger.debug("Constructor created for User");
@@ -20,10 +20,10 @@ public class User {
 					String password)
 		{
 			super();
-			this.userId = userId;
-			this.userType = userType;
-			this.userName = userName;
-			this.password = password;
+			User.userId = userId;
+			User.userType = userType;
+			User.userName = userName;
+			User.password = password;
 		}
 		
 		@Override

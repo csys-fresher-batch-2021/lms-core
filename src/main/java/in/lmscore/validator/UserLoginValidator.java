@@ -17,7 +17,6 @@ public class UserLoginValidator {
 		// Logger.debug(" Login Successfully");
 
 	}
-
 	public static void main(String[] args) {
 		// employee id
 

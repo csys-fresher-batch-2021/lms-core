@@ -19,10 +19,10 @@ public class EmployeeUpdateLeaveDAO {
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 
-		String driverClassName = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@192.168.0.20:1521:DBEBS12";
-		String username = "apps";
-		String password = "apps";
+		String driverClassName = System.getenv("DB_DRIVER_NAME");
+		String url = System.getenv("DB_URL");
+		String username = System.getenv("DB_USERNAME");
+		String password = System.getenv("DB_PASSWORD");
 
 		// Step 1: Load the driver
 		Class.forName(driverClassName);
