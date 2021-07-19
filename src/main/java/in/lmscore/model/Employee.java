@@ -41,8 +41,7 @@ public class Employee {
 	}
 
 	public Employee() {
-		Logger.info("Constructor created for employee");
-
+		System.out.println("Constructor created for employee");
 	}
 
 	public Employee(String empCode, String empName, LocalDate dob, String gender, String dept, String postn,

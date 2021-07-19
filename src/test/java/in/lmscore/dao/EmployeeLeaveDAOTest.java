@@ -26,7 +26,7 @@ public class EmployeeLeaveDAOTest {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		// connection.setAutoCommit(false);//default true
 
-		Logger.debug(connection);
+		System.out.println(connection);
 
 		int leaveId = 121;
 		String empCode = "E1009";
@@ -40,7 +40,7 @@ public class EmployeeLeaveDAOTest {
 		int leavebalance = 20;
 		String status = "APPLIED";
 		String sql = "insert into LMS_EMPLOYEES_LEAVE_DET (LEAVE_ID,EMPLOYEE_CODE,MANAGER_CODE,LEAVE_TYPE,LEAVE_REASON,LEAVE_START_DATE,LEAVE_END_DATE,NO_OF_DAYS,TOTAL_LEAVE,LEAVE_BALANCE,STATUS)values (?,?,?,?,?,?,?,?,?,?,?)";
-		Logger.debug(sql);
+		System.out.println(sql);
 
 		PreparedStatement pst = connection.prepareStatement(sql);
 		pst.setInt(1, leaveId);
@@ -60,7 +60,7 @@ public class EmployeeLeaveDAOTest {
 
 		connection.close();
 
-		Logger.debug("No of rows inserted :" + rows);
+		System.out.println("No of rows inserted :" + rows);
 
 	}
 

@@ -10,7 +10,5 @@ public class Logger {
 		Logger.debug(object);
 	}
 	
-	public static void info(String object) {
-		Logger.debug(object);
-	}
+	
 }
