@@ -1,6 +1,7 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,22 +24,24 @@ public class EmployeeDetailsDAO {
 
 		try {
 			con = ConnectionUtil.getConnection();
-			String sql = "select EMPLOYEE_CODE,EMPLOYEE_NAME,GENDER,DEPARTMENT,POSITION,PLACE,MANAGER_CODE,EMPLOYEE_TYPE from LMS_EMPLOYEES_DET";
+			String sql = "select EMPLOYEE_CODE,EMPLOYEE_NAME,DATE_OF_BIRTH,GENDER,DEPARTMENT,POSITION,HIRE_DATE,PLACE,MANAGER_CODE,EMPLOYEE_TYPE from LMS_EMPLOYEES_DET";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			LMS_EMPLOYEES_DETAILS = new ArrayList<>();
 			while (rs.next()) {
 				String employeeCode = rs.getString(1);
 				String EmpName = rs.getString(2);
-				String Gender = rs.getString(3);
-				String department = rs.getString(4);
-				String Position = rs.getString(5);
-				String Place = rs.getString(6);
-				String managerCode = rs.getString(7);
-				String empType = rs.getString(8);
+				Date dob = rs.getDate(3);
+				String Gender = rs.getString(4);
+				String department = rs.getString(5);
+				String Position = rs.getString(6);
+				Date hireDate = rs.getDate(7);
+				String Place = rs.getString(8);
+				String managerCode = rs.getString(9);
+				String empType = rs.getString(10);
 
-				GroupEmpDetails LMS_EMPLOYEES_DET = new GroupEmpDetails(employeeCode, EmpName, Gender, department,
-						Position, Place, managerCode, empType);
+				GroupEmpDetails LMS_EMPLOYEES_DET = new GroupEmpDetails(employeeCode, EmpName,dob,Gender, department,
+						Position,hireDate,Place, managerCode, empType);
 				LMS_EMPLOYEES_DETAILS.add(LMS_EMPLOYEES_DET);
 			}
 
