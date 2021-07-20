@@ -10,9 +10,9 @@ import java.util.List;
 import in.lmscore.model.GroupEmpLeaveDetails;
 import in.lmscore.util.ConnectionUtil;
 
-public class AllEmployeeLeavesDAO {
+public class ListEmployeeLeavesDAO {
 
-	private AllEmployeeLeavesDAO() {
+	private ListEmployeeLeavesDAO() {
 
 	}
 
