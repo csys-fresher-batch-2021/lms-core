@@ -13,12 +13,3 @@ public class UserLogin {
 
 	}
 }
-// constructor ends
-
-// method starts
-/*
- * public static void display (String userName, String passWord) {
- * Logger.debug("userName : "+ userName);
- * Logger.debug("passWord : "+ passWord);
- * Logger.debug("Login Successfully"); } //method ends
- */

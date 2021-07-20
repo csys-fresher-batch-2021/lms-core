@@ -31,7 +31,7 @@ public class User {
 			return "User [id=" + userId + ", usertype=" + userType + ", username=" + userName + ",username=" + password + "]";
 		}
 		public String getuserId() {
-			// TODO Auto-generated method stub
+
 			return null;
 		}
 	

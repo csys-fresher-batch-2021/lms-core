@@ -1,6 +1,6 @@
 package in.lmscore.validator;
 
-//import in.lmscore.util.Logger;
+import in.lmscore.util.Logger;
 
 public class UserLoginValidator {
 
@@ -9,12 +9,6 @@ public class UserLoginValidator {
 		if (userName == null || passWord == null) {
 			throw new Exception("Invalid userName / passWord");
 		}
-
-		// End Validation
-
-		// StudentDAO.save(name);
-		// UserLogin e = new UserLogin(" ","25678");
-		// Logger.debug(" Login Successfully");
 
 	}
 	public static void main(String[] args) {
@@ -25,12 +19,12 @@ public class UserLoginValidator {
 
 		try {
 			validate(userName, passWord);
-			System.out.println("Validation completed");
+			Logger.debug("Validation completed");
 		} catch (Exception e) {
-			// Logger.debug("Catch");
+			
 			String errorMessage = e.getMessage();
-			System.out.println("errorMessage:" + errorMessage);
-			// e.printStackTrace();
+			Logger.debug("errorMessage:" + errorMessage);
+			
 		}
 	}
 
