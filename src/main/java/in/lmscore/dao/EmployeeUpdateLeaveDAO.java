@@ -1,14 +1,20 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
-//import in.lmscore.util.Logger;
-
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import in.lmscore.util.ConnectionUtil;
+import in.lmscore.util.Logger;
+import in.lmscore.validator.IdValidation;
+import in.lmscore.validator.NameValidation;
+
 public class EmployeeUpdateLeaveDAO {
-	// If any Changes in this Code inform to me
+	
+	private EmployeeUpdateLeaveDAO() {
+		
+	}
+	
 	/*
 	 * code developed by Karthi L 14-07-2021
 	 * 
@@ -16,51 +22,43 @@ public class EmployeeUpdateLeaveDAO {
 	 * 
 	 * @return
 	 */
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
+	public static void leaveUpdateEmployee() {
 
-		String driverClassName = System.getenv("DB_DRIVER_NAME");
-		String url = System.getenv("DB_URL");
-		String username = System.getenv("DB_USERNAME");
-		String password = System.getenv("DB_PASSWORD");
+		Connection connection = null;
+		PreparedStatement pst = null;
+		
+		try {
+			connection = ConnectionUtil.getConnection();
+			int leaveId = 101;
+			String status = "Approved";
+			String userName = "Manager";
 
-		// Step 1: Load the driver
-		Class.forName(driverClassName);
+			boolean userupdatuseridvalidate = NameValidation.userupdatuseridvalidate(status);
+			boolean checkId = IdValidation.checkId(leaveId);
 
-		// Step 2: Connection
+			if (userupdatuseridvalidate && checkId) {
 
-		Connection connection = DriverManager.getConnection(url, username, password);
-		// connection.setAutoCommit(false);//default true
+				if (userName.equals("Manager")) {
+					String sql = "Update LMS_EMPLOYEES_LEAVE_DET set Status = ? where LEAVE_ID = ?";
+					
+					pst = connection.prepareStatement(sql);
+					pst.setString(1, status);
+					pst.setInt(2, leaveId);
+					int rows = pst.executeUpdate();
 
-		System.out.println(connection);
+					Logger.debug("No of rows Updated :" + rows);
+				} else {
+					Logger.debug("You Cannot have a permission to delete.");
 
-		// String name = ;
-		int leaveId = 101;
-		String status = "Approved";
-		String userName = "Manager";
-
-		if (userName.equals("Manager")) {
-			String sql = "Update LMS_EMPLOYEES_LEAVE_DET set Status = ? where LEAVE_ID = ?";
-			System.out.println(sql);
-
-			PreparedStatement pst = connection.prepareStatement(sql);
-			pst.setString(1, status);
-			pst.setInt(2, leaveId);
-			int rows = pst.executeUpdate();
-			pst.close();
-
-			connection.close();
-
-			System.out.println("No of rows Updated :" + rows);
-		} else {
-			System.out.println("You Cannot have a permission to delete.");
-
+				}
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally {
+			ConnectionUtil.close(pst,connection);
 		}
 
-		// connection.commit();
-
-		// connection.rollback();
 
 	}
-
 }
+	

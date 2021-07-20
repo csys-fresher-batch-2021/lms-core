@@ -356,16 +356,17 @@ User Id | User Type | Username | Password |
  | E1010 | ADMIN | SUDHARSAN | User@123 |
 
 ```sql
-CREATE TABLE LMS_EMP_LOGIN_DET 
+CREATE TABLE LMS_EMP_LOGIN_DET_V1 
            ( USER_ID VARCHAR2(150), 
             USER_TYPE VARCHAR2(150), 
             PASSWORD VARCHAR2(150), 
-            USERNAME VARCHAR2(150)
+            USERNAME VARCHAR2(150),
+            STATUS VARCHAR2(150) Default 'Active'
            );
 ```
 
 ```sql
-Insert into LMS_EMP_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1012','Employee','GANESH','Emp123');
+Insert into LMS_EMP_LOGIN_DET_V1 (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1012','Employee','GANESH','Emp123');
 Insert into LMS_EMP_LOGIN_DET (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1005','Employee','KARTHI','Sys@123');
 ```
 

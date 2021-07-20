@@ -1,14 +1,19 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
-import in.lmscore.util.Logger;
-
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import in.lmscore.util.ConnectionUtil;
+import in.lmscore.util.Logger;
+import in.lmscore.validator.NameValidation;
+
 public class EmployeeUpdateDAO {
-	// If any Changes in this Code inform to me
+
+	private EmployeeUpdateDAO() {
+
+	}
+
 	/*
 	 * code developed by Karthi L 14-07-2021
 	 * 
@@ -16,48 +21,45 @@ public class EmployeeUpdateDAO {
 	 * 
 	 * @return
 	 */
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
+	public static void UpdateEmployee() {
 
-		String driverClassName = System.getenv("DB_DRIVER_NAME");
-		String url = System.getenv("DB_URL");
-		String username = System.getenv("DB_USERNAME");
-		String password = System.getenv("DB_PASSWORD");
+		Connection connection = null;
+		PreparedStatement pst = null;
 
+		try {
+			connection = ConnectionUtil.getConnection();
+			String userName = "REKA";
+			String password1 = "Welcome@123";
+			String userId = "E1005";
 
-		// Step 1: Load the driver
-		Class.forName(driverClassName);
+			boolean userupdatusernamevalidate = NameValidation.userupdatusername(userName);
+			boolean userupdatpasswordvalidate = NameValidation.userupdatepassword(password1);
+			boolean userupdatuseridvalidate = NameValidation.userupdatusername(userId);
 
-		// Step 2: Connection
+			if (userupdatusernamevalidate && userupdatpasswordvalidate && userupdatuseridvalidate) {
 
-		Connection connection = DriverManager.getConnection(url, username, password);
-		// connection.setAutoCommit(false);//default true
+				String sql = "Update LMS_EMP_LOGIN_DET_V1 set USERNAME = ?, PASSWORD = ? where USER_ID = ?";
 
-		System.out.println(connection);
+				pst = connection.prepareStatement(sql);
+				pst.setString(1, userName);
+				pst.setString(2, password1);
+				pst.setString(3, userId);
+				int rows = pst.executeUpdate();
 
-		// String name = ;
-		String userName = "REKA";
-		String password1 = "Welcome@123";
-		String userId = "E1005";
+				if (rows > 0) {
+					Logger.debug("No of rows Updated :" + rows);
+				} else {
+					Logger.debug("User ID Not Exists");
+				}
+			} else {
+				Logger.debug("Invalid Datas");
 
-		String sql = "Update LMS_EMP_LOGIN_DET set USERNAME = ?, PASSWORD = ? where USER_ID = ?";
-		System.out.println(sql);
-
-		PreparedStatement pst = connection.prepareStatement(sql);
-		pst.setString(1, userName);
-		pst.setString(2, password1);
-		pst.setString(3, userId);
-		int rows = pst.executeUpdate();
-		pst.close();
-
-		connection.close();
-
-		System.out.println("No of rows Updated :" + rows);
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionUtil.close(pst, connection);
+		}
 
 	}
-
-	// connection.commit();
-
-	// connection.rollback();
-
 }

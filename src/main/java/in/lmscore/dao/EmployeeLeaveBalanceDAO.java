@@ -1,15 +1,14 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import in.lmscore.model.EmpLeaveBalance;
 import in.lmscore.util.ConnectionUtil;
+import in.lmscore.util.Logger;
 
 public class EmployeeLeaveBalanceDAO {
 
@@ -53,14 +52,12 @@ public class EmployeeLeaveBalanceDAO {
 			List<EmpLeaveBalance> showeployeedetails = showeployeedetails();
 
 			for (EmpLeaveBalance EmpLeaveBalance : showeployeedetails) {
-				System.out.println(EmpLeaveBalance);
+				Logger.debug(EmpLeaveBalance);
 			}
 
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

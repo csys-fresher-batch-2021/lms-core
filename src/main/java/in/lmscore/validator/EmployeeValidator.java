@@ -10,6 +10,10 @@ public class EmployeeValidator {
 	 * 
 	 * @return
 	 */
+	
+	private EmployeeValidator() {
+		
+	}
 
 	public static boolean empvalidate(String empCode) throws Exception {
 		if (empCode == null || empCode.trim().equals("")) {
@@ -20,7 +24,7 @@ public class EmployeeValidator {
 	}
 
 	public static void emptypevalidate(String userType) {
-		if (userType == "Admin") {
+		if (userType.equals("Admin")) {
 			Logger.debug("You can add new employee");
 		} else {
 			Logger.debug("You cannot add new employee");
@@ -28,7 +32,7 @@ public class EmployeeValidator {
 	}
 
 	public static void checkempvalidate(String userType)  {
-		if (userType == "Employee") {
+		if (userType.equals("Employee")) {
 			Logger.debug("Inserted Successfully");
 			// ("Inserted Successfully");
 		} else {

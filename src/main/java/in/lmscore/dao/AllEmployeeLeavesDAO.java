@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import in.lmscore.model.GroupEmpLeaveDetails;
@@ -20,7 +19,6 @@ public class AllEmployeeLeavesDAO {
 	public static List<GroupEmpLeaveDetails> showeployeedetails() throws ClassNotFoundException, SQLException {
 		PreparedStatement ps = null;
 		Connection con = null;
-
 		ResultSet rs = null;
 		ArrayList<GroupEmpLeaveDetails> LMS_EMPLOYEES_LEAVE_DETAILS = null;
 
@@ -52,23 +50,6 @@ public class AllEmployeeLeavesDAO {
 			ConnectionUtil.close(rs, ps, con);
 		}
 		return LMS_EMPLOYEES_LEAVE_DETAILS;
-	}
-
-	public static void main(String[] args) {
-		try {
-			List<GroupEmpLeaveDetails> showeployeedetails = showeployeedetails();
-
-			for (GroupEmpLeaveDetails GroupEmpLeaveDetails : showeployeedetails) {
-				System.out.println(GroupEmpLeaveDetails);
-			}
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 }

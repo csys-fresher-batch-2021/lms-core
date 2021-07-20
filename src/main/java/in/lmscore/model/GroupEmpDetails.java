@@ -5,7 +5,7 @@ import java.sql.Date;
 public class GroupEmpDetails {
 
 	public String empCode;
-	public String empName;
+	private String empName;
 	public Date dob;
 	public String gender;
 	public String department;
