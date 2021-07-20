@@ -1,19 +1,18 @@
 package in.lmscore.model;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class GroupEmpLeaveDetails {
 
-	public int leaveId;
-	public String empCode;
-	public String empType1;
-	public Date leaveStartDate;
-	public Date leaveEndtDate;
-	public int noOfDays;
-	public String leaveReason;
-	public String status;
-	public int leaveBalance;
+	int leaveId;
+	String empCode;
+	String empType1;
+	Date leaveStartDate;
+	Date leaveEndtDate;
+	int noOfDays;
+	String leaveReason;
+	String status;
+	int leaveBalance;
 
 	@Override
 	public String toString() {

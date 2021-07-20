@@ -21,7 +21,7 @@ public class EmployeeUpdateDAO {
 	 * 
 	 * @return
 	 */
-	public static void UpdateEmployee() {
+	public static void updateEmployee() {
 
 		Connection connection = null;
 		PreparedStatement pst = null;

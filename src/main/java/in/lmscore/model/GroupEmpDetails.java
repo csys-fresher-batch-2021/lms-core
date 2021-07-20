@@ -4,16 +4,16 @@ import java.sql.Date;
 
 public class GroupEmpDetails {
 
-	public String empCode;
-	private String empName;
-	public Date dob;
-	public String gender;
-	public String department;
-	public String position;
-	public Date hireDate;
-	public String place;
-	public String managerCode;
-	public String empType;
+	String empCode;
+	String empName;
+	Date   dob;
+	String gender;
+	String department;
+	String position;
+	Date   hireDate;
+	String place;
+	String managerCode;
+	String empType;
 
 	@Override
 	public String toString() {
@@ -22,8 +22,8 @@ public class GroupEmpDetails {
 				+ place + ", managerCode=" + managerCode + ", empType=" + empType + "]";
 	}
 
-	public GroupEmpDetails(String empCode, String empName, Date dob,String gender, String department, String position,Date hireDate,
-			String place, String managerCode, String empType) {
+	public GroupEmpDetails(String empCode, String empName, Date dob, String gender, String department, String position,
+			Date hireDate, String place, String managerCode, String empType) {
 		super();
 		this.empCode = empCode;
 		this.empName = empName;
@@ -35,10 +35,6 @@ public class GroupEmpDetails {
 		this.place = place;
 		this.managerCode = managerCode;
 		this.empType = empType;
-	}
-
-	private GroupEmpDetails() {
-
 	}
 
 }

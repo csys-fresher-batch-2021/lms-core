@@ -1,11 +1,8 @@
 package in.lmscore.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import in.lmscore.model.User;
 import in.lmscore.util.ConnectionUtil;
 import in.lmscore.util.Logger;
 
@@ -18,7 +15,7 @@ public class UserDeleteDAO {
 	 * 
 	 * @return
 	 */
-	public static void DeleteEmployee()  {
+	public static void deleteEmployee()  {
 
 		PreparedStatement ps = null;
 		Connection con = null;
@@ -38,9 +35,9 @@ public class UserDeleteDAO {
 			int count = ps.executeUpdate();
 
 			if (count > 0) {
-				System.out.println(count + " row deleted");
+				Logger.debug(count + " row deleted");
 			} else {
-				System.out.println("You Cannot have a permission to delete.");
+				Logger.debug("You Cannot have a permission to delete.");
 				
 			}
 			}

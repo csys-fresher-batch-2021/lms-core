@@ -2,9 +2,9 @@ package in.lmscore.model;
 
 public class EmpLeaveBalance {
 
-	public int leaveId;
-	public String empCode;
-	public int leaveBalance;
+    int leaveId;
+	String empCode;
+	int leaveBalance;
 
 	@Override
 	public String toString() {

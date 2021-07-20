@@ -20,7 +20,7 @@ public class ListEmployeeLeavesDAO {
 		PreparedStatement ps = null;
 		Connection con = null;
 		ResultSet rs = null;
-		ArrayList<GroupEmpLeaveDetails> LMS_EMPLOYEES_LEAVE_DETAILS = null;
+		ArrayList<GroupEmpLeaveDetails> lmsLeaveEmployeeDetails = null;
 
 		try {
 			con = ConnectionUtil.getConnection();
@@ -28,7 +28,7 @@ public class ListEmployeeLeavesDAO {
 			String sql = "select leave_id,EMPLOYEE_CODE,LEAVE_TYPE,LEAVE_START_DATE,LEAVE_END_DATE,NO_OF_DAYS,LEAVE_REASON,STATUS from LMS_EMPLOYEES_LEAVE_DET  where EMPLOYEE_CODE = 'E1001' ";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			LMS_EMPLOYEES_LEAVE_DETAILS = new ArrayList<>();
+			lmsLeaveEmployeeDetails = new ArrayList<>();
 			while (rs.next()) {
 				int leaveId = rs.getInt(1);
 				String empCode = rs.getString(2);
@@ -39,9 +39,9 @@ public class ListEmployeeLeavesDAO {
 				String leaveReason = rs.getString(7);
 				String status = rs.getString(8);
 
-				GroupEmpLeaveDetails LMS_EMPLOYEES_LEAVE_DET = new GroupEmpLeaveDetails(leaveId, empCode, empType1,
+				GroupEmpLeaveDetails lmsLeaveEmployeeDet = new GroupEmpLeaveDetails(leaveId, empCode, empType1,
 						leaveStartDate, leaveEndDate, noOfDays, leaveReason, status);
-				LMS_EMPLOYEES_LEAVE_DETAILS.add(LMS_EMPLOYEES_LEAVE_DET);
+				lmsLeaveEmployeeDetails.add(lmsLeaveEmployeeDet);
 			}
 
 		} catch (SQLException e) {
@@ -49,7 +49,7 @@ public class ListEmployeeLeavesDAO {
 		} finally {
 			ConnectionUtil.close(rs, ps, con);
 		}
-		return LMS_EMPLOYEES_LEAVE_DETAILS;
+		return lmsLeaveEmployeeDetails;
 	}
 
 }

@@ -21,7 +21,7 @@ public class EmployeeLeaveBalanceDAO {
 		Connection con = null;
 
 		ResultSet rs = null;
-		ArrayList<EmpLeaveBalance> LMS_EMPLOYEES_LEAVE_DETAILS = null;
+		ArrayList<EmpLeaveBalance> lmsEmployeeLeaveDetails = null;
 
 		try {
 			con = ConnectionUtil.getConnection();
@@ -29,14 +29,14 @@ public class EmployeeLeaveBalanceDAO {
 			String sql = "select leave_id,EMPLOYEE_CODE,LEAVE_BALANCE from LMS_EMPLOYEES_LEAVE_DET  where EMPLOYEE_CODE = 'E1001' ";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			LMS_EMPLOYEES_LEAVE_DETAILS = new ArrayList<>();
+			lmsEmployeeLeaveDetails = new ArrayList<>();
 			while (rs.next()) {
 				int leaveId = rs.getInt(1);
 				String empCode = rs.getString(2);
 				int leaveBalance = rs.getInt(3);
 
-				EmpLeaveBalance LMS_EMPLOYEES_LEAVE_DET = new EmpLeaveBalance(leaveId,empCode,leaveBalance);
-				LMS_EMPLOYEES_LEAVE_DETAILS.add(LMS_EMPLOYEES_LEAVE_DET);
+				EmpLeaveBalance lmsEmployeeLeaveDet = new EmpLeaveBalance(leaveId,empCode,leaveBalance);
+				lmsEmployeeLeaveDetails.add(lmsEmployeeLeaveDet);
 			}
 
 		} catch (SQLException e) {
@@ -44,7 +44,7 @@ public class EmployeeLeaveBalanceDAO {
 		} finally {
 			ConnectionUtil.close(rs, ps, con);
 		}
-		return LMS_EMPLOYEES_LEAVE_DETAILS;
+		return lmsEmployeeLeaveDetails;
 	}
 
 	public static void main(String[] args) {
@@ -55,11 +55,9 @@ public class EmployeeLeaveBalanceDAO {
 				Logger.debug(EmpLeaveBalance);
 			}
 
-		} catch (ClassNotFoundException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		
 	}
-
+	}
 }

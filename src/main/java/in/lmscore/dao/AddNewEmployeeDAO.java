@@ -46,14 +46,4 @@ public class AddNewEmployeeDAO {
 		}
 	}
 	
-	public static void main(String[] args) {
-		
-		try {
-			AddNewEmployeeDAO.addNewEmployee();
-		} catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
-		} 
-		
-	}
-
 }

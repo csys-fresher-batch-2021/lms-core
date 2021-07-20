@@ -1,20 +1,25 @@
 package in.lmscore.dao;
+
+import in.lmscore.model.EmpLeaveBalance;
+
 import java.sql.SQLException;
 
-import in.lmscore.util.Logger;
+import java.util.List;
+
 public class EmployeeLeaveBalanceDAOTest {
+
 	public static void main(String[] args) {
-		List<EmpLeaveBalance> showeployeedetails = showeployeedetails();
+		try {
+			List<EmpLeaveBalance> showeployeedetails = EmployeeLeaveBalanceDAO.showeployeedetails();
 
-		for (EmpLeaveBalance EmpLeaveBalance : showeployeedetails) {
-			Logger.debug(EmpLeaveBalance);
-		}
+			for (EmpLeaveBalance GroupEmpLeaveDetails : showeployeedetails) {
+				System.out.println(GroupEmpLeaveDetails);
+			}
 
-	} catch (ClassNotFoundException e) {
-		e.printStackTrace();
-	} catch (SQLException e) {
-		e.printStackTrace();
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} 
 	}
+
 }
-		
-	}
+

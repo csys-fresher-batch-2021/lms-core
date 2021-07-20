@@ -45,6 +45,16 @@ public class NameValidation {
 		}
 
 	}
+	public static boolean updateempstatus(String status) {
+		if (status == null || status.trim().equals("")) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+
+
 
 	public static void main(String[] args) {
 

@@ -4,7 +4,7 @@ public class EmployeeUpdateDAOTest {
 
 	public static void main(String[] args) {
 
-		EmployeeUpdateDAO.UpdateEmployee();
+		EmployeeUpdateDAO.updateEmployee();
 
 	}
 

@@ -1,56 +1,64 @@
-
 package in.lmscore.dao;
 
 import java.sql.Connection;
-
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-//import in.lmscore.util.Logger;
+import in.lmscore.util.ConnectionUtil;
+import in.lmscore.util.Logger;
+import in.lmscore.validator.IdValidation;
+import in.lmscore.validator.NameValidation;
+
 public class CancelLeaveDAO {
-	// If any Changes in this Code inform to me
+
+	private CancelLeaveDAO() {
+
+	}
+
 	/*
-	 * code developed by Reka 14-07-2021
+	 * code developed by Karthi L 14-07-2021
 	 * 
 	 * @param employeedetails
 	 * 
 	 * @return
 	 */
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
+	@SuppressWarnings("null")
+	public static void cancelEmployee() {
 
-		String driverClassName = System.getenv("DB_DRIVER_NAME");
-		String url = System.getenv("DB_URL");
-		String username = System.getenv("DB_USERNAME");
-		String password = System.getenv("DB_PASSWORD");
+		Connection connection = null;
+		PreparedStatement pst = null;
 
-		// Step 1: Load the driver
-		Class.forName(driverClassName);
+		try {
+			connection = ConnectionUtil.getConnection();
+			String status = "CANCELLED";
+			int leaveId = 120;
+			boolean updateEmployeeStatus = NameValidation.updateempstatus(status);
+			boolean updateEmployeeLeaveid = IdValidation.checkId(leaveId);
 
-		// Step 2: Connection
+			if (updateEmployeeStatus && updateEmployeeLeaveid) {
 
-		Connection connection = DriverManager.getConnection(url, username, password);
-		// connection.setAutoCommit(false);//default true
+				String sql = "UPDATE LMS_EMPLOYEES_LEAVE_DET SET STATUS= ? Where LEAVE_ID = ?";
+				Logger.debug(sql);
 
-		System.out.println(connection);
+				PreparedStatement pst1 = connection.prepareStatement(sql);
+				pst1.setString(1, status);
+				pst1.setInt(2, leaveId);
+				int rows = pst1.executeUpdate();
 
-		// String name = ;
-		String status = "CANCELLED";
-		int leaveId = 121;
+				if (rows > 0) {
+					Logger.debug("No of rows Updated :" + rows);
+				} else {
+					Logger.debug("User ID Not Exists");
+				}
+			} else {
+				Logger.debug("Invalid Datas");
 
-		String sql = "UPDATE LMS_EMPLOYEES_LEAVE_DET SET STATUS= ? Where LEAVE_ID = ?";
-		System.out.println(sql);
-
-		PreparedStatement pst = connection.prepareStatement(sql);
-		pst.setString(1, status);
-		pst.setInt(2, leaveId);
-		int rows = pst.executeUpdate();
-		pst.close();
-
-		connection.close();
-
-		System.out.println("No of rows Updated :" + rows);
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionUtil.close(pst, connection);
+		}
 
 	}
-
 }
