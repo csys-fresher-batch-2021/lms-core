@@ -17,8 +17,8 @@ public class AddNewEmployeeDAO {
 		Connection connection = ConnectionUtil.getConnection();
 		// connection.setAutoCommit(false);//default true
 
-		String userId = "E1021";
-		String uname = "Jagan";
+		String userId = "E1003";
+		String uname = "Hema";
 		String pwd = "Welcome#2";
 		String userType = "Employee";
 		
@@ -29,7 +29,7 @@ public class AddNewEmployeeDAO {
 
 		if(userupdatuseridvalidate && userupdatusertypevalidate && userupdatusername && userupdatepassword) {
 		
-		String sql = "INSERT INTO LMS_EMP_LOGIN_DET (USER_ID,USER_TYPE,PASSWORD,USERNAME) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO LMS_USER_LOGIN (USER_ID,USER_TYPE,PASSWORD,USERNAME) VALUES(?,?,?,?)";
 		
 		PreparedStatement pst = connection.prepareStatement(sql);
 		pst.setString(1, userId);
