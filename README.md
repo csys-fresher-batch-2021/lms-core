@@ -204,6 +204,8 @@ Status Code |Status Name |
  | A | APPROVED |
  | R | REJECTED | 
  | C | CANCELLED |  
+ 
+ 
 
 ##### .List employee leaves - feature-1
 ```sql
@@ -355,6 +357,9 @@ User Id | User Type | Username | Password |
  | E1013 | ADMIN | NARESH | System@123 |
  | E1010 | ADMIN | SUDHARSAN | User@123 |
 
+
+#### .List employee Details query feature-2
+
 ```sql
 CREATE TABLE LMS_EMP_LOGIN_DET_V1 
            ( USER_ID VARCHAR2(150), 
@@ -387,7 +392,6 @@ select username,password from LMS_EMP_LOGIN_DET
 where username = 'Admin' and password = 'User@123';
 ```
 
-#### .List employee Details query feature-2
 
 ```sql
 select EMP.EMPLOYEE_CODE,EMP.EMPLOYEE_NAME,EMP.date_of_birth,EMP.hire_date,
@@ -398,6 +402,32 @@ from LMS_EMPLOYEES_DET EMP,
 where EMP.MANAGER_CODE = MGR.EMPLOYEE_CODE
 order by 1 asc;
 ```
+```sql
+CREATE TABLE LMS_USER_LOGIN (USER_ID VARCHAR2(150) unique not null, 
+            USER_TYPE VARCHAR2(150), 
+            USERNAME VARCHAR2(150),
+            PASSWORD VARCHAR2(150),
+            STATUS VARCHAR2(150)DEFAULT 'ACTIVE');
+```
+```sql                               
+Insert into LMS_USER_LOGIN (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1011','Admin','ARUN','Welcome@123');
+Insert into LMS_USER_LOGIN (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1013','Admin','NARESH','System@123');
+Insert into LMS_USER_LOGIN (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1010','Admin','SUDHARSAN','User@123');
+Insert into LMS_USER_LOGIN (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1012','Employee','GANESH','Emp123');
+Insert into LMS_USER_LOGIN (USER_ID,USER_TYPE,USERNAME,PASSWORD) values ('E1005','Employee','KARTHI','Sys@123');
+```
+
+```sql
+SELECT * FROM LMS_USER_LOGIN;
+```            
+
+User Id | User Type | Username | Password |STATUS |
+ |:------- |:----------|:-------|:------------------|:------------------|
+ | E1012 | EMPLOYEE | GANESH | Emp@123 |ACTIVE |
+ | E1005 | EMPLOYEE | KARTHI | Sys@123 |ACTIVE |
+ |	E1011 | Admin | ARUN | Welcome@123 | ACTIVE |
+ |	E1013	| Admin | NARESH | System@123 | ACTIVE |
+ | E1010 | Admin | SUDHARSAN | User@123 | ACTIVE |            
 
 #### .Add New employee (Admin) query Using Procedure feature-3
 
