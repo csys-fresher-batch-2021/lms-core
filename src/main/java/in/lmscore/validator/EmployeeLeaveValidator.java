@@ -1,8 +1,11 @@
 package in.lmscore.validator;
 
 public class EmployeeLeaveValidator {
-	public static final String Invalid = "Invalid";
-	public static final String valid = "valid";
+
+	private EmployeeLeaveValidator() {
+
+	}
+
 	// code developed by Arun R
 	// dont touch this code without my permission
 

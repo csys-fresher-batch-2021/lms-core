@@ -22,7 +22,6 @@ public class CancelLeaveDAO {
 	 * 
 	 * @return
 	 */
-	@SuppressWarnings("null")
 	public static void cancelEmployee() {
 
 		Connection connection = null;
@@ -40,10 +39,10 @@ public class CancelLeaveDAO {
 				String sql = "UPDATE LMS_EMPLOYEES_LEAVE_DET SET STATUS= ? Where LEAVE_ID = ?";
 				Logger.debug(sql);
 
-				PreparedStatement pst1 = connection.prepareStatement(sql);
-				pst1.setString(1, status);
-				pst1.setInt(2, leaveId);
-				int rows = pst1.executeUpdate();
+				pst = connection.prepareStatement(sql);
+				pst.setString(1, status);
+				pst.setInt(2, leaveId);
+				int rows = pst.executeUpdate();
 
 				if (rows > 0) {
 					Logger.debug("No of rows Updated :" + rows);

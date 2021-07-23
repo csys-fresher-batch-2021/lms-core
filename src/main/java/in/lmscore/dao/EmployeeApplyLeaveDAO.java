@@ -12,10 +12,14 @@ import in.lmscore.validator.EmployeeLeaveValidator;
 
 public class EmployeeApplyLeaveDAO {
 
+	private EmployeeApplyLeaveDAO() {
+
+	}
+
 	// code developed by Arun R
 	// dont touch this code without my permission
 
-	public static void applyLeave() throws Exception {
+	public static void applyLeave() {
 		Connection con = null;
 		PreparedStatement pst = null;
 		try {
@@ -41,19 +45,19 @@ public class EmployeeApplyLeaveDAO {
 				String sql = "insert into LMS_EMPLOYEES_LEAVE_DET (LEAVE_ID,EMPLOYEE_CODE,MANAGER_CODE,LEAVE_TYPE,LEAVE_REASON,LEAVE_START_DATE,LEAVE_END_DATE,NO_OF_DAYS,TOTAL_LEAVE,LEAVE_BALANCE,STATUS)values (?,?,?,?,?,?,?,?,?,?,?)";
 				Logger.debug(sql);
 
-				PreparedStatement pst1 = con.prepareStatement(sql);
-				pst1.setInt(1, leaveId);
-				pst1.setString(2, empCode);
-				pst1.setString(3, mgrCode);
-				pst1.setString(4, leaveType);
-				pst1.setString(5, leaveReason);
-				pst1.setDate(6, Date.valueOf(leaveStartDate));
-				pst1.setDate(7, Date.valueOf(leaveEndDate));
-				pst1.setInt(8, noofdays);
-				pst1.setInt(9, totalLeave);
-				pst1.setInt(10, leavebalance);
-				pst1.setString(11, status);
-				int rows = pst1.executeUpdate();
+				pst = con.prepareStatement(sql);
+				pst.setInt(1, leaveId);
+				pst.setString(2, empCode);
+				pst.setString(3, mgrCode);
+				pst.setString(4, leaveType);
+				pst.setString(5, leaveReason);
+				pst.setDate(6, Date.valueOf(leaveStartDate));
+				pst.setDate(7, Date.valueOf(leaveEndDate));
+				pst.setInt(8, noofdays);
+				pst.setInt(9, totalLeave);
+				pst.setInt(10, leavebalance);
+				pst.setString(11, status);
+				int rows = pst.executeUpdate();
 				if (rows > 0) {
 					Logger.debug("No of rows Updated :" + rows);
 				} else {

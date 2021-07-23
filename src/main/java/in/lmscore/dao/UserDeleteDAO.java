@@ -7,6 +7,11 @@ import in.lmscore.util.ConnectionUtil;
 import in.lmscore.util.Logger;
 
 public class UserDeleteDAO {
+
+	private UserDeleteDAO() {
+
+	}
+
 	// If any Changes in this Code inform to me
 	/*
 	 * code developed by Karthi L 14-07-2021
@@ -15,7 +20,7 @@ public class UserDeleteDAO {
 	 * 
 	 * @return
 	 */
-	public static void deleteEmployee()  {
+	public static void deleteEmployee() {
 
 		PreparedStatement ps = null;
 		Connection con = null;
@@ -24,22 +29,22 @@ public class UserDeleteDAO {
 			con = ConnectionUtil.getConnection();
 			String userId1 = "E1005";
 			String userName = "Admin";
-		    String status = "INACTIVE";
+			String status = "INACTIVE";
 
 			if (userName.equals("Admin")) {
-			String sql = "Update LMS_EMP_LOGIN_DET_V1 set STATUS = ? where USER_ID = ?";
-			ps = con.prepareStatement(sql);
-			ps.setString(1, status);
-			ps.setString(2, userId1);
+				String sql = "Update LMS_EMP_LOGIN_DET_V1 set STATUS = ? where USER_ID = ?";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, status);
+				ps.setString(2, userId1);
 
-			int count = ps.executeUpdate();
+				int count = ps.executeUpdate();
 
-			if (count > 0) {
-				Logger.debug(count + " row deleted");
-			} else {
-				Logger.debug("You Cannot have a permission to delete.");
-				
-			}
+				if (count > 0) {
+					Logger.debug(count + " row deleted");
+				} else {
+					Logger.debug("You Cannot have a permission to delete.");
+
+				}
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

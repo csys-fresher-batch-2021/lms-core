@@ -1,4 +1,5 @@
 package in.lmscore.validator;
+import in.lmscore.exception.ValidException;
 import in.lmscore.util.Logger;
 
 public class EmployeeValidator {
@@ -15,11 +16,11 @@ public class EmployeeValidator {
 		
 	}
 
-	public static boolean empvalidate(String empCode) throws Exception {
+	public static boolean empvalidate(String empCode) throws ValidException {
 		if (empCode == null || empCode.trim().equals("")) {
-			throw new Exception("Invalid");
+			throw new ValidException("Invalid");
 		} else {
-			throw new Exception("valid");
+			throw new ValidException("valid");
 		}
 	}
 
@@ -34,7 +35,6 @@ public class EmployeeValidator {
 	public static void checkempvalidate(String userType)  {
 		if (userType.equals("Employee")) {
 			Logger.debug("Inserted Successfully");
-			// ("Inserted Successfully");
 		} else {
 			Logger.debug("user_type is not valid");
 		}

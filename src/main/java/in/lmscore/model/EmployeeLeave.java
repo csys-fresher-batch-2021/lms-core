@@ -19,12 +19,7 @@ public class EmployeeLeave {
 	public void display(int leaveId, String empCode, String mgrCode, String leaveType, String leaveReason,
 			LocalDate leaveStartDate, LocalDate leaveEndDate, int noofdays, int totalLeave, int leaveBalance,
 			String status) {
-		/*
-		 * this.leaveId = leaveId; this.empCode = empCode; this.mgrCode = mgrCode;
-		 * this.leaveType = leaveType; this.leaveReason = leaveReason;
-		 * this.leaveStartDate = leaveStartDate; this.leaveEndDate = leaveEndDate;
-		 * this.totalAnnualLeave = totalAnnualLeave; this.status = status;
-		 */
+		
 		Logger.debug("LeaveId : " + leaveId);
 		Logger.debug("EmployeeCode : " + empCode);
 		Logger.debug("ManagerCode : " + mgrCode);
